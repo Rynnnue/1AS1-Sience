@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>قسم 1AS1 - جذع مشترك علوم | التميز والعلم</title>
+    <meta name="description" content="الصفحة الرسمية لقسم 1AS1 - جذع مشترك علوم. اكتشف المواد، الشروحات، والموارد التعليمية بأحدث تصميم.">
+    <meta name="keywords" content="1AS1, جذع مشترك علوم, ثانوية, علوم, تعليم, جزائر">
+    <meta name="author" content="قسم 1AS1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* خلفية متحركة */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(1);}
+            100% { opacity: 0.8; transform: scale(1.05);}
+        }
+
+        /* جزيئات متحركة */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 15s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 70px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-size: 55px;
+            background: linear-gradient(135deg, #FFD966, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .sub {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* بطاقات المواد */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .subject-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 25px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #FFD966;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .subject-icon {
+            font-size: 55px;
+            color: #FFD966;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .subject-card:hover .subject-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .subject-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .subject-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* نافذة شرح المواد المنبثقة */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #1e3c3a, #0f2e2b);
+            max-width: 700px;
+            width: 100%;
+            border-radius: 50px;
+            padding: 35px;
+            position: relative;
+            color: white;
+            border: 2px solid #ffd966;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: modalPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes modalPop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 35px;
+            cursor: pointer;
+            color: #ffb347;
+            transition: 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 100, 100, 0.3);
+            color: #ff6666;
+        }
+
+        .modal h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-right: 5px solid #ffd966;
+            padding-right: 15px;
+        }
+
+        .modal p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin: 20px 0;
+        }
+
+        .modal img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        }
+
+        /* لوحة الادمن */
+        .admin-panel {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 999;
+        }
+
+        .admin-locker {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s;
+            border: 2px solid #ffd966;
+        }
+
+        .admin-locker i {
+            font-size: 30px;
+            color: #ffd966;
+            transition: 0.3s;
+        }
+
+        .admin-locker:hover {
+            transform: scale(1.1);
+            background: #ffd966;
+        }
+        
+        .admin-locker:hover i {
+            color: #1a1a1a;
+        }
+
+        /* قائمة الادمن */
+        .admin-menu {
+            position: fixed;
+            bottom: 100px;
+            left: 25px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 20px;
+            width: 280px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            border: 2px solid #ffd966;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .admin-menu input {
+            padding: 12px;
+            border-radius: 40px;
+            border: none;
+            text-align: center;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .admin-menu button {
+            background: linear-gradient(90deg, #ffb347, #ffcc33);
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+        }
+
+        .admin-menu button:hover {
+            transform: scale(0.98);
+            box-shadow: 0 5px 15px rgba(255, 200, 0, 0.3);
+        }
+
+        .msg {
+            color: #ffaa66;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* عنصر تحكم الموسيقى */
+        .music-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+        }
+
+        .music-btn {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s;
+            border: 2px solid #ffd966;
+        }
+
+        .music-btn i {
+            font-size: 28px;
+            color: #ffd966;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 2rem; }
+            .subjects-grid { gap: 15px; }
+            .modal-content { padding: 25px; }
+        }
+
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffd966;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="animated-bg"></div>
+<div class="particles" id="particles"></div>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-flask"></i>
+        </div>
+        <h1>قسم <span style="color:#FFD966; text-shadow: 0 0 10px rgba(255,217,102,0.5);">1AS1</span></h1>
+        <h2 style="font-size: 1.8rem; margin: 10px 0;">جذع مشترك علوم</h2>
+        <div class="sub">
+            <i class="fas fa-star-of-life"></i> التميز يبدأ من هنا <i class="fas fa-star-of-life"></i>
+        </div>
+    </div>
+
+    <!-- شبكة المواد -->
+    <div class="subjects-grid" id="subjectsGrid"></div>
+
+    <footer>
+        <i class="fas fa-graduation-cap"></i> قسم 1AS1 - رحلة العلم والإبداع | جميع الحقوق محفوظة © 2025
+    </footer>
+</div>
+
+<!-- نافذة شرح المادة -->
+<div id="subjectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModalBtn">×</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" alt="صورة المادة">
+        <p id="modalDescription"></p>
+    </div>
+</div>
+
+<!-- خزانة الادمن -->
+<div class="admin-panel">
+    <div class="admin-locker" id="adminLockerBtn">
+        <i class="fas fa-user-lock"></i>
+    </div>
+    <div class="admin-menu" id="adminMenu">
+        <input type="password" id="adminCode" placeholder="أدخل الرمز السري" inputmode="numeric" maxlength="9">
+        <button id="submitAdminCode">🔓 فتح الخزانة</button>
+        <div id="adminMsg" class="msg"></div>
+    </div>
+</div>
+
+<!-- تحكم الموسيقى -->
+<div class="music-control">
+    <div class="music-btn" id="musicBtn">
+        <i class="fas fa-music"></i>
+    </div>
+</div>
+
+<!-- مصدر الصوت الهادئ -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // بيانات المواد مع شرح مفصل وصور
+    const subjectsData = [
+        {
+            id: 1,
+            name: "🔬 علوم الطبيعة والحياة",
+            icon: "fas fa-leaf",
+            shortDesc: "استكشاف الكائنات الحية والبيئة",
+            fullDesc: "📘 مادة علوم الطبيعة والحياة تهدف إلى فهم تركيب الكائنات الحية، وظائفها، وتفاعلاتها مع البيئة.\n\n🧬 المحاور الرئيسية:\n• دراسة الخلية ووظائفها\n• الوراثة والتنوع البيولوجي\n• النظم البيئية والتوازن الطبيعي\n• التصنيف الحديث للكائنات الحية\n• التجارب العملية والملاحظات الميدانية\n\n🎯 هذه المادة تنمي روح البحث والاستكشاف العلمي لدى الطالب.",
+            image: "https://images.unsplash.com/photo-1530026186672-2cd00ffc2fe5?w=600&auto=format"
+        },
+        {
+            id: 2,
+            name: "⚡ الفيزياء والكيمياء",
+            icon: "fas fa-atom",
+            shortDesc: "قوانين المادة والطاقة",
+            fullDesc: "🧪 مادة تجمع بين دراسة الظواهر الطبيعية وتحولات المادة.\n\n🔹 الفيزياء:\n• الحركة والقوى (الميكانيك)\n• الطاقة وتحولاتها\n• الكهرباء والمغناطيسية\n• الضوء والموجات\n\n🔹 الكيمياء:\n• بنية المادة والجدول الدوري\n• التفاعلات الكيميائية\n• المحاليل والأحماض والقواعد\n• الكيمياء العضوية basics\n\n✨ تطبيقات حياتية وتجارب شيقة تنمي المنهجية التجريبية.",
+            image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&auto=format"
+        },
+        {
+            id: 3,
+            name: "📐 الرياضيات",
+            icon: "fas fa-square-root-alt",
+            shortDesc: "لغة العلوم والمنطق",
+            fullDesc: "🧮 الرياضيات هي أساس العلوم وتنمي التفكير المنطقي.\n\n📚 المحاور الأساسية:\n• الدوال العددية والتمثيل البياني\n• الهندسة التحليلية والمتجهات\n• المتتاليات العددية\n• الإحصاء والاحتمالات\n• المعادلات والمتراجحات\n\n🎓 تطوير مهارات حل المشكلات والتفكير التجريدي.",
+            image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format"
+        },
+        {
+            id: 4,
+            name: "📖 اللغة العربية",
+            icon: "fas fa-book-open",
+            shortDesc: "آداب ونصوص",
+            fullDesc: "📝 مادة تثري الحس اللغوي والأدبي.\n\n🎭 المحتوى:\n• النصوص الأدبية (شعر ونثر)\n• البلاغة (تشبيه، استعارة، كناية)\n• قواعد النحو والصرف\n• التعبير الكتابي والإنشاء\n• تحليل الخطاب والنصوص القديمة\n\n🌟 تعزز الهوية والانتماء وتنمي الذائقة الأدبية.",
+            image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format"
+        },
+        {
+            id: 5,
+            name: "🇬🇧 اللغة الإنجليزية",
+            icon: "fas fa-language",
+            shortDesc: "مهارات التواصل العالمي",
+            fullDesc: "🌍 مفتاح العلوم والمعرفة العالمية.\n\n📖 المهارات المستهدفة:\n• الاستماع والمحادثة (Listening & Speaking)\n• القراءة السريعة والمكثفة\n• قواعد اللغة (Grammar)\n• المفردات العلمية والتقنية\n• كتابة الفقرات والمواضيع\n\n🎯 تمكين الطالب من الوصول للمصادر العالمية.",
+            image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format"
+        },
+        {
+            id: 6,
+            name: "🌍 التاريخ والجغرافيا",
+            icon: "fas fa-globe-africa",
+            shortDesc: "الحضارات والمجالات",
+            fullDesc: "🏛️ فهم الماضي لفهم الحاضر والتخطيط للمستقبل.\n\n📜 التاريخ:\n• تاريخ الجزائر عبر العصور\n• الحضارات القديمة (فينيقية، رومانية، إسلامية)\n• المقاومة الشعبية والثورة التحريرية\n• قضايا عالمية معاصرة\n\n🗺️ الجغرافيا:\n• الجغرافيا الطبيعية (تضاريس، مناخ)\n• الجغرافيا البشرية والتنمية\n• الخرائط والمساقط\n• الموارد والأنشطة الاقتصادية",
+            image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&auto=format"
+        },
+        {
+            id: 7,
+            name: "💭 الفلسفة",
+            icon: "fas fa-brain",
+            shortDesc: "التفكير النقدي والأخلاق",
+            fullDesc: "🤔 مادة تفتح آفاق التفكير والتساؤل.\n\n📚 المحاور:\n• مشكلة المعرفة (المصادر، الحدود)\n• القيم والأخلاق\n• الحرية والمسؤولية\n• العدالة والمجتمع\n• تحليل النصوص الفلسفية\n• بناء الحجج المنطقية\n\n✨ تنمي النضج الفكري والقدرة على النقد البناء.",
+            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format"
+        },
+        {
+            id: 8,
+            name: "💻 الإعلام الآلي",
+            icon: "fas fa-laptop-code",
+            shortDesc: "تقنيات العصر الرقمي",
+            fullDesc: "🖥️ أساسيات الرقمنة والبرمجة.\n\n📌 المحتوى:\n• خوارزميات وحل المشكلات\n• أساسيات البرمجة بلغة بايثون\n• أنظمة التشغيل والملفات\n• شبكات الحاسوب والإنترنت\n• الأمن الرقمي وحماية البيانات\n• استخدام أدوات البحث العلمي\n\n🚀 تأهيل الطالب لعصر التكنولوجيا والذكاء الاصطناعي.",
+            image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&auto=format"
+        }
+    ];
+
+    // عرض المواد في الصفحة
+    const gridContainer = document.getElementById('subjectsGrid');
+
+    function renderSubjects() {
+        gridContainer.innerHTML = '';
+        subjectsData.forEach(sub => {
+            const card = document.createElement('div');
+            card.classList.add('subject-card');
+            card.setAttribute('data-id', sub.id);
+            card.innerHTML = `
+                <div class="subject-icon"><i class="${sub.icon}"></i></div>
+                <div class="subject-title">${sub.name}</div>
+                <div class="subject-desc">${sub.shortDesc}</div>
+            `;
+            card.addEventListener('click', () => openModal(sub));
+            gridContainer.appendChild(card);
+        });
+    }
+
+    // النافذة المنبثقة
+    const modal = document.getElementById('subjectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function openModal(subject) {
+        modalTitle.innerText = subject.name;
+        modalImage.src = subject.image;
+        modalDescription.innerText = subject.fullDesc;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    closeModalBtn.onclick = closeModal;
+    window.onclick = function(e) {
+        if (e.target === modal) closeModal();
+    };
+
+    // ========== خزانة الادمن ==========
+    const lockerBtn = document.getElementById('adminLockerBtn');
+    const adminMenu = document.getElementById('adminMenu');
+    const submitBtn = document.getElementById('submitAdminCode');
+    const adminCodeInput = document.getElementById('adminCode');
+    const adminMsg = document.getElementById('adminMsg');
+
+    let isMenuOpen = false;
+
+    lockerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isMenuOpen = !isMenuOpen;
+        adminMenu.style.display = isMenuOpen ? 'flex' : 'none';
+        if(isMenuOpen) {
+            adminMsg.innerText = '';
+            adminCodeInput.value = '';
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (adminMenu && !adminMenu.contains(event.target) && !lockerBtn.contains(event.target)) {
+            adminMenu.style.display = 'none';
+            isMenuOpen = false;
+        }
+    });
+
+    submitBtn.addEventListener('click', () => {
+        const code = adminCodeInput.value.trim();
+        if (code === '123456789') {
+            adminMsg.style.color = "#90EE90";
+            adminMsg.innerHTML = "✅ مرحباً أيها المدير! تم فتح الخزانة.<br>🔧 يمكنك الآن إدارة المحتوى";
+            setTimeout(() => {
+                alert("🔓 لوحة تحكم المدير\n\n✨ الميزات المتاحة:\n• يمكنك تعديل المواد والشروحات\n• إضافة صور جديدة\n• إدارة محتوى القسم\n\n(هذه نسخة تجريبية - يمكنك تطويرها بإضافة واجهة إدارة حقيقية)");
+                adminMenu.style.display = 'none';
+                isMenuOpen = false;
+            }, 1000);
+        } else {
+            adminMsg.style.color = "#ffaaaa";
+            adminMsg.innerText = "❌ رمز خاطئ! الرمز الصحيح هو 123456789";
+            adminCodeInput.value = '';
+        }
+    });
+
+    // ========== الموسيقى الهادئة ==========
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+            musicBtn.style.opacity = '0.7';
+            isPlaying = false;
+        } else {
+            bgMusic.play().catch(error => {
+                console.log("تشغيل الموسيقى تلقائياً قد يكون محظوراً، اضغط مرة أخرى:", error);
+            });
+            musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            musicBtn.style.opacity = '1';
+            isPlaying = true;
+        }
+    });
+
+    // محاولة تشغيل الموسيقى تلقائياً (قد لا تعمل في بعض المتصفحات)
+    bgMusic.volume = 0.3; // صوت هادئ
+    
+    // إنشاء جزيئات عشوائية
+    function createParticles() {
+        const particlesDiv = document.getElementById('particles');
+        for (let i = 0; i < 80; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            particle.style.animationDelay = `${Math.random() * 15}s`;
+            particle.style.animation = `floatParticle ${Math.random() * 15 + 10}s infinite linear`;
+            particlesDiv.appendChild(particle);
+        }
+    }
+
+    // تشغيل كل شيء
+    renderSubjects();
+    createParticles();
+
+    // إضافة تأثير ظهور للعناصر
+    console.log("✅ تم تحميل صفحة قسم 1AS1 بنجاح!");
+</script>
+</body>
+</html>
